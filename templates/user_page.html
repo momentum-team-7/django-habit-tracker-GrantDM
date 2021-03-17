@@ -2,12 +2,17 @@
 
 {% block content %}
 
+{% for profile in profiles %}
+{% if profile.user == request.user %}
+<p>This is {{profile}}</p>
+{% endif %}
+{% endfor %}
+
 {% for habit in habits %}
 
-{% for user in users %}
+{% for profile in profiles %}
 
-{% if habit.author == user %}
-<p>This is {{user}}</p>
+{% if habit.author == profile.user %}
 <br>
 <br>
 <p>{{habit.tracker}} out of {{habit.goal}} {{habit}}</p>

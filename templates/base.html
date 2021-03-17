@@ -8,8 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{% url 'user-page' pk=request.user.pk %}">{{request.user}}</a>
+    
+    
     {% block content %}
-
 
 
 

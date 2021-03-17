@@ -23,7 +23,7 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('', views.homepage, name='homepage'),
     path('landing/', views.landing, name='landing'),
-    path('user_page/', views.user_page, name='user-page'),
+    path('user_page/<int:pk>', views.user_page, name='user-page'),
 ]
 
 if settings.DEBUG:

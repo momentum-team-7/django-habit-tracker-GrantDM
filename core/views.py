@@ -24,7 +24,8 @@ def landing(request):
 
     return render(request, 'landing.html', {'users': users, 'profiles': profiles})
 
-def user_page(request):
-    users = User.objects.all()
+def user_page(request, pk):
     habits = Habit.objects.all()
-    return render(request, 'user_page.html', {'users': users, 'habits': habits})
+    profiles = Profile.objects.all()
+    user = get_object_or_404(User, pk=pk)
+    return render(request, 'user_page.html', {'user': user, 'habits': habits, 'profiles': profiles})
