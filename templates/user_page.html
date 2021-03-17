@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for habit in habits %}
+
+{% for user in users %}
+
+{% if habit.author == user %}
+<p>This is {{user}}</p>
+<br>
+<br>
+<p>{{habit.tracker}} out of {{habit.goal}} {{habit}}</p>
+<p>{{habit.tracker.date}}</p>
+{% endif %}
+
+
+{% endfor %}
+{% endfor %}
+
+{% endblock content %}
